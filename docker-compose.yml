@@ -1,0 +1,19 @@
+version: '3.7'
+
+services:
+  openresty:
+    image: openresty/openresty:alpine
+    ports:
+      - 8808:80
+    volumes:
+      - ./openresty/nginx.conf:/usr/local/openresty/nginx/conf/nginx.conf:ro
+      - ./openresty/logs:/usr/local/openresty/nginx/logs:rw
+      - ./openresty/lua:/usr/local/openresty/nginx/lua:rw
+
+  redis:
+    image: redis:alpine
+    ports:
+      - 6379:6379
+    volumes:
+      - ./redis/redis.conf:/usr/local/etc/redis/redis.conf:ro
+      - ./redis/data:/data:rw

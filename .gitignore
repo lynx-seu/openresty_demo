@@ -1,0 +1,4 @@
+openresty/logs/**
+redis/data/*.rdb
+
+!**/.gitkeep
