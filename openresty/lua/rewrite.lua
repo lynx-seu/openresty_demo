@@ -1,2 +1,3 @@
 
-ngx.redirect '/rewrite'
+--ngx.redirect '/rewrite'
+ngx.exec '/rewrite'
